@@ -18,7 +18,7 @@
     "catalog": {
       "path": "/directorio/",
       "selector": ".page_directorio .dir1",
-      "scriptJson": "var animes = (\\\\{.*?\\\\});",
+      "scriptJson": "var animes\\\\s*=\\\\s*(\\\\{.*?\\\\});",
       "itemTitle": "title",
       "itemUrl": "url",
       "itemImage": "image"

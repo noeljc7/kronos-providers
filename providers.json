@@ -12,7 +12,7 @@
         "selector": "#animes .card > a",
         "itemTitle": "h5.card-title",
         "itemUrl": "self->attr:href",
-        "itemImage": "img->attr:src"
+        "itemImage": "img->attr:data-animepic"
       }
     ],
     "search": {

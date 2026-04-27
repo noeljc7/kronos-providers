@@ -13,6 +13,14 @@
         "itemTitle": "h5.card-title",
         "itemUrl": "a->attr:href",
         "itemImage": "img->attr:data-animepic"
+      },
+      {
+        "title": "TOP ANIMES",
+        "path": "/top",
+        "selector": ".toplist",
+        "itemTitle": "h5.card-title",
+        "itemUrl": "a->attr:href",
+        "itemImage": "img.card-img-top->attr:src"
       }
     ],
     "catalog": {
@@ -34,8 +42,11 @@
           { "label": "Comedia", "value": "comedia" },
           { "label": "Drama", "value": "drama" },
           { "label": "Fantasía", "value": "fantasia" },
+          { "label": "Hentai", "value": "hentai" },
+          { "label": "Latino", "value": "latino" },
           { "label": "Romance", "value": "romance" },
           { "label": "Shounen", "value": "shounen" },
+          { "label": "Sobrenatural", "value": "sobrenatural" },
           { "label": "Terror", "value": "terror" }
         ]
       },

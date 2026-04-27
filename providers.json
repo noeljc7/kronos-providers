@@ -13,14 +13,50 @@
         "itemTitle": "h5.card-title",
         "itemUrl": "a->attr:href",
         "itemImage": "img->attr:data-animepic"
+      }
+    ],
+    "catalog": {
+      "path": "/directorio/{page}/",
+      "selector": ".page_directorio .card",
+      "itemTitle": "h5",
+      "itemUrl": "a->attr:href",
+      "itemImage": "img->attr:data-src"
+    },
+    "filters": [
+      {
+        "title": "Género",
+        "queryParam": "genero",
+        "options": [
+          { "label": "Todos", "value": "" },
+          { "label": "Acción", "value": "accion" },
+          { "label": "Aventura", "value": "aventura" },
+          { "label": "Comedia", "value": "comedia" },
+          { "label": "Fantasía", "value": "fantasia" },
+          { "label": "Romance", "value": "romance" },
+          { "label": "Seinen", "value": "seinen" },
+          { "label": "Shounen", "value": "shounen" },
+          { "label": "Sobrenatural", "value": "sobrenatural" }
+        ]
       },
       {
-        "title": "DONGHUAS",
-        "path": "/",
-        "selector": "#donghuas .card",
-        "itemTitle": "h5.card-title",
-        "itemUrl": "a->attr:href",
-        "itemImage": "img->attr:data-animepic"
+        "title": "Tipo",
+        "queryParam": "tipo",
+        "options": [
+          { "label": "Todos", "value": "" },
+          { "label": "Animes", "value": "animes" },
+          { "label": "Películas", "value": "peliculas" },
+          { "label": "OVAs", "value": "ovas" },
+          { "label": "Especiales", "value": "especiales" }
+        ]
+      },
+      {
+        "title": "Estado",
+        "queryParam": "estado",
+        "options": [
+          { "label": "Todos", "value": "" },
+          { "label": "En emisión", "value": "emision" },
+          { "label": "Finalizados", "value": "finalizados" }
+        ]
       }
     ],
     "search": {
@@ -58,6 +94,13 @@
         "itemImage": "img->attr:src"
       }
     ],
+    "catalog": {
+      "path": "/browse?page={page}",
+      "selector": ".ListAnimes .Anime",
+      "itemTitle": ".Title",
+      "itemUrl": "a->attr:href",
+      "itemImage": "img->attr:src"
+    },
     "search": {
       "path": "/browse?q={query}",
       "selector": ".ListAnimes .Anime",

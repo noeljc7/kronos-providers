@@ -40,7 +40,7 @@
     },
     "details": {
       "description": ".anime_info p.scroll",
-      "totalEpisodesSelector": ".anime__pagination option:last",
+      "totalEpisodesSelector": "ajax:#guardar-anime->attr:data-anime",
       "episodeTitle": "Capítulo {n}",
       "episodeUrl": "/{n}/"
     }

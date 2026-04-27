@@ -40,7 +40,7 @@
     },
     "details": {
       "description": ".anime_info p.scroll",
-      "totalEpisodesSelector": ".anime__pagination option",
+      "totalEpisodesSelector": ".anime__pagination option:last",
       "episodeTitle": "Capítulo {n}",
       "episodeUrl": "/{n}/"
     }

@@ -16,11 +16,12 @@
       }
     ],
     "catalog": {
-      "path": "/directorio/{page}/",
+      "path": "/directorio/",
       "selector": ".page_directorio .dir1",
-      "itemTitle": "h5.card-title",
-      "itemUrl": "a->attr:href",
-      "itemImage": "img.card-img-top->attr:src"
+      "scriptJson": "var animes = (\\\\{.*?\\\\});",
+      "itemTitle": "title",
+      "itemUrl": "url",
+      "itemImage": "image"
     },
     "filters": [
       {
@@ -32,13 +33,10 @@
           { "label": "Aventura", "value": "aventura" },
           { "label": "Comedia", "value": "comedia" },
           { "label": "Drama", "value": "drama" },
-          { "label": "Especiales", "value": "especiales" },
           { "label": "Fantasía", "value": "fantasia" },
           { "label": "Hentai", "value": "hentai" },
-          { "label": "Misterio", "value": "misterio" },
-          { "label": "Psicológico", "value": "psicologico" },
+          { "label": "Latino", "value": "latino" },
           { "label": "Romance", "value": "romance" },
-          { "label": "Seinen", "value": "seinen" },
           { "label": "Shounen", "value": "shounen" },
           { "label": "Sobrenatural", "value": "sobrenatural" },
           { "label": "Terror", "value": "terror" }
@@ -51,18 +49,7 @@
           { "label": "Todos", "value": "" },
           { "label": "Animes", "value": "animes" },
           { "label": "Películas", "value": "peliculas" },
-          { "label": "OVAs", "value": "ovas" },
-          { "label": "ONAs", "value": "onas" }
-        ]
-      },
-      {
-        "title": "Estado",
-        "queryParam": "estado",
-        "options": [
-          { "label": "Todos", "value": "" },
-          { "label": "En emisión", "value": "emision" },
-          { "label": "Finalizados", "value": "finalizados" },
-          { "label": "Por estrenar", "value": "estrenos" }
+          { "label": "OVAs", "value": "ovas" }
         ]
       }
     ],
@@ -80,7 +67,7 @@
       "episodeUrl": "/{n}/"
     },
     "videos": {
-      "scriptRegex": "var servers = (\\[.*?\\]);",
+      "scriptRegex": "var servers = (\\\\[.*?\\\\]);",
       "serverName": "server",
       "serverUrl": "remote->base64"
     }

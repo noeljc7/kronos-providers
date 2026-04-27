@@ -7,7 +7,7 @@
     "type": "ANIME",
     "home": [
       {
-        "title": "ANIMES RECIENTES",
+        "title": "EPISODIOS RECIENTES",
         "path": "/",
         "selector": "#animes .card",
         "itemTitle": "h5.card-title",
@@ -17,10 +17,10 @@
     ],
     "catalog": {
       "path": "/directorio/{page}/",
-      "selector": ".page_directorio .card",
-      "itemTitle": "h5",
+      "selector": ".page_directorio .dir1",
+      "itemTitle": "h5.card-title",
       "itemUrl": "a->attr:href",
-      "itemImage": "img->attr:data-src"
+      "itemImage": "img.card-img-top->attr:src"
     },
     "filters": [
       {
@@ -31,11 +31,17 @@
           { "label": "Acción", "value": "accion" },
           { "label": "Aventura", "value": "aventura" },
           { "label": "Comedia", "value": "comedia" },
+          { "label": "Drama", "value": "drama" },
+          { "label": "Especiales", "value": "especiales" },
           { "label": "Fantasía", "value": "fantasia" },
+          { "label": "Hentai", "value": "hentai" },
+          { "label": "Misterio", "value": "misterio" },
+          { "label": "Psicológico", "value": "psicologico" },
           { "label": "Romance", "value": "romance" },
           { "label": "Seinen", "value": "seinen" },
           { "label": "Shounen", "value": "shounen" },
-          { "label": "Sobrenatural", "value": "sobrenatural" }
+          { "label": "Sobrenatural", "value": "sobrenatural" },
+          { "label": "Terror", "value": "terror" }
         ]
       },
       {
@@ -46,7 +52,7 @@
           { "label": "Animes", "value": "animes" },
           { "label": "Películas", "value": "peliculas" },
           { "label": "OVAs", "value": "ovas" },
-          { "label": "Especiales", "value": "especiales" }
+          { "label": "ONAs", "value": "onas" }
         ]
       },
       {
@@ -55,7 +61,8 @@
         "options": [
           { "label": "Todos", "value": "" },
           { "label": "En emisión", "value": "emision" },
-          { "label": "Finalizados", "value": "finalizados" }
+          { "label": "Finalizados", "value": "finalizados" },
+          { "label": "Por estrenar", "value": "estrenos" }
         ]
       }
     ],
@@ -76,48 +83,6 @@
       "scriptRegex": "var servers = (\\[.*?\\]);",
       "serverName": "server",
       "serverUrl": "remote->base64"
-    }
-  },
-  {
-    "id": "animeflv_dynamic",
-    "name": "AnimeFLV Dinámico",
-    "baseUrl": "https://www3.animeflv.net",
-    "region": "LAT",
-    "type": "ANIME",
-    "home": [
-      {
-        "title": "ÚLTIMOS EPISODIOS",
-        "path": "/",
-        "selector": ".ListEpisodios li",
-        "itemTitle": "strong.Title",
-        "itemUrl": "a->attr:href",
-        "itemImage": "img->attr:src"
-      }
-    ],
-    "catalog": {
-      "path": "/browse?page={page}",
-      "selector": ".ListAnimes .Anime",
-      "itemTitle": ".Title",
-      "itemUrl": "a->attr:href",
-      "itemImage": "img->attr:src"
-    },
-    "search": {
-      "path": "/browse?q={query}",
-      "selector": ".ListAnimes .Anime",
-      "itemTitle": ".Title",
-      "itemUrl": "a->attr:href",
-      "itemImage": "img->attr:src"
-    },
-    "details": {
-      "description": ".Sinop",
-      "episodesSelector": "ul.ListCaps li",
-      "episodeTitle": "text",
-      "episodeUrl": "a->attr:href"
-    },
-    "videos": {
-      "selector": ".Table .Button.Sm.Ln-YouTube",
-      "serverName": "text",
-      "serverUrl": "attr:href"
     }
   }
 ]

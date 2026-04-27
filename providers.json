@@ -3,7 +3,7 @@
          "id": "jkanime_dynamic",
          "name": "Jkanime Dinámico",
          "baseUrl": "https://jkanime.net",
-         "region": "LAT",
+         "region": "ALL",
          "type": "ANIME",
          "home": [
            {

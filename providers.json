@@ -18,7 +18,7 @@
     "catalog": {
       "path": "/directorio/",
       "selector": ".page_directorio .dir1",
-      "scriptJson": "var animes\\\\s*=\\\\s*(\\\\{.*?\\\\});",
+      "scriptJson": "var animes\\s*=\\s*(\\{.*?\\});",
       "itemTitle": "title",
       "itemUrl": "url",
       "itemImage": "image"
@@ -34,11 +34,6 @@
           { "label": "Comedia", "value": "comedia" },
           { "label": "Drama", "value": "drama" },
           { "label": "Fantasía", "value": "fantasia" },
-          { "label": "Hentai", "value": "hentai" },
-          { "label": "Latino", "value": "latino" },
-          { "label": "Romance", "value": "romance" },
-          { "label": "Shounen", "value": "shounen" },
-          { "label": "Sobrenatural", "value": "sobrenatural" },
           { "label": "Terror", "value": "terror" }
         ]
       },
@@ -67,9 +62,51 @@
       "episodeUrl": "/{n}/"
     },
     "videos": {
-      "scriptRegex": "var servers = (\\\\[.*?\\\\]);",
+      "scriptRegex": "var servers = (\\[.*?\\]);",
       "serverName": "server",
       "serverUrl": "remote->base64"
+    }
+  },
+  {
+    "id": "animeflv_dynamic",
+    "name": "AnimeFLV Dinámico",
+    "baseUrl": "https://www3.animeflv.net",
+    "region": "LAT",
+    "type": "ANIME",
+    "home": [
+      {
+        "title": "ÚLTIMOS EPISODIOS",
+        "path": "/",
+        "selector": ".ListEpisodios li",
+        "itemTitle": "strong.Title",
+        "itemUrl": "a->attr:href",
+        "itemImage": "img->attr:src"
+      }
+    ],
+    "catalog": {
+      "path": "/browse?page={page}",
+      "selector": ".ListAnimes .Anime",
+      "itemTitle": ".Title",
+      "itemUrl": "a->attr:href",
+      "itemImage": "img->attr:src"
+    },
+    "search": {
+      "path": "/browse?q={query}",
+      "selector": ".ListAnimes .Anime",
+      "itemTitle": ".Title",
+      "itemUrl": "a->attr:href",
+      "itemImage": "img->attr:src"
+    },
+    "details": {
+      "description": ".Sinop",
+      "episodesSelector": "ul.ListCaps li",
+      "episodeTitle": "text",
+      "episodeUrl": "a->attr:href"
+    },
+    "videos": {
+      "selector": ".Table .Button.Sm.Ln-YouTube",
+      "serverName": "text",
+      "serverUrl": "attr:href"
     }
   }
 ]

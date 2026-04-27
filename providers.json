@@ -43,6 +43,11 @@
       "totalEpisodesSelector": "ajax:#guardar-anime->attr:data-anime",
       "episodeTitle": "Capítulo {n}",
       "episodeUrl": "/{n}/"
+    },
+    "videos": {
+      "scriptRegex": "var servers = (\\[.*?\\]);",
+      "serverName": "server",
+      "serverUrl": "remote->base64"
     }
   }
 ]

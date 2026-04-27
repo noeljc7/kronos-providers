@@ -1,32 +1,48 @@
-[
-  {
-    "id": "jkanime_dynamic",
-    "name": "Jkanime Dinámico",
-    "baseUrl": "https://jkanime.net",
-    "region": "LAT",
-    "type": "ANIME",
-    "home": [
-      {
-        "title": "EPISODIOS RECIENTES",
-        "path": "/",
-        "selector": "#animes .card > a",
-        "itemTitle": "h5.card-title",
-        "itemUrl": "self->attr:href",
-        "itemImage": "img->attr:data-animepic"
-      }
-    ],
-    "search": {
-      "path": "/buscar/{query}/",
-      "selector": ".anime__item",
-      "itemTitle": "h5",
-      "itemUrl": "a->attr:href",
-      "itemImage": "img->attr:src"
-    },
-    "details": {
-      "description": ".anime_info p.scroll",
-      "episodesSelector": ".anime__pagination option",
-      "episodeTitle": "text",
-      "episodeUrl": "attr:value"
-    }
-  }
-]
+    1 [
+    2   {
+    3     "id": "jkanime_dynamic",
+    4     "name": "Jkanime Dinámico",
+    5     "baseUrl": "https://jkanime.net",
+    6     "region": "LAT",
+    7     "type": "ANIME",
+    8     "home": [
+    9       {
+   10         "title": "ANIMES RECIENTES",
+   11         "path": "/",
+   12         "selector": "#animes .card",
+   13         "itemTitle": "h5.card-title",
+   14         "itemUrl": "a->attr:href",
+   15         "itemImage": "img->attr:data-animepic"
+   16       },
+   17       {
+   18         "title": "DONGHUAS",
+   19         "path": "/",
+   20         "selector": "#donghuas .card",
+   21         "itemTitle": "h5.card-title",
+   22         "itemUrl": "a->attr:href",
+   23         "itemImage": "img->attr:data-animepic"
+   24       },
+   25       {
+   26         "title": "OVAS Y ESPECIALES",
+   27         "path": "/",
+   28         "selector": "#ovas .card",
+   29         "itemTitle": "h5.card-title",
+   30         "itemUrl": "a->attr:href",
+   31         "itemImage": "img->attr:data-animepic"
+   32       }
+   33     ],
+   34     "search": {
+   35       "path": "/buscar/{query}/",
+   36       "selector": ".anime__item",
+   37       "itemTitle": "h5 a",
+   38       "itemUrl": "h5 a->attr:href",
+   39       "itemImage": ".set-bg->attr:data-setbg"
+   40     },
+   41     "details": {
+   42       "description": ".anime_info p.scroll",
+   43       "episodesSelector": "#episodes-content .epcontent",
+   44       "episodeTitle": ".cap_num span",
+   45       "episodeUrl": "a->attr:href"
+   46     }
+   47   }
+   48 ]

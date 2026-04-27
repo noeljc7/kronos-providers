@@ -21,14 +21,6 @@
         "itemTitle": "h5.card-title",
         "itemUrl": "a->attr:href",
         "itemImage": "img->attr:data-animepic"
-      },
-      {
-        "title": "OVAS Y ESPECIALES",
-        "path": "/",
-        "selector": "#ovas .card",
-        "itemTitle": "h5.card-title",
-        "itemUrl": "a->attr:href",
-        "itemImage": "img->attr:data-animepic"
       }
     ],
     "search": {
@@ -48,6 +40,41 @@
       "scriptRegex": "var servers = (\\[.*?\\]);",
       "serverName": "server",
       "serverUrl": "remote->base64"
+    }
+  },
+  {
+    "id": "animeflv_dynamic",
+    "name": "AnimeFLV Dinámico",
+    "baseUrl": "https://www3.animeflv.net",
+    "region": "LAT",
+    "type": "ANIME",
+    "home": [
+      {
+        "title": "ÚLTIMOS EPISODIOS",
+        "path": "/",
+        "selector": ".ListEpisodios li",
+        "itemTitle": "strong.Title",
+        "itemUrl": "a->attr:href",
+        "itemImage": "img->attr:src"
+      }
+    ],
+    "search": {
+      "path": "/browse?q={query}",
+      "selector": ".ListAnimes .Anime",
+      "itemTitle": ".Title",
+      "itemUrl": "a->attr:href",
+      "itemImage": "img->attr:src"
+    },
+    "details": {
+      "description": ".Sinop",
+      "episodesSelector": "ul.ListCaps li",
+      "episodeTitle": "text",
+      "episodeUrl": "a->attr:href"
+    },
+    "videos": {
+      "selector": ".Table .Button.Sm.Ln-YouTube",
+      "serverName": "text",
+      "serverUrl": "attr:href"
     }
   }
 ]

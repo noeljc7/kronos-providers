@@ -9,23 +9,15 @@
       {
         "title": "EPISODIOS RECIENTES",
         "path": "/",
-        "selector": "#animes .card",
+        "selector": "#animes .card > a",
         "itemTitle": "h5.card-title",
-        "itemUrl": "a->attr:href",
-        "itemImage": "img->attr:data-animepic"
-      },
-      {
-        "title": "TRENDING",
-        "path": "/",
-        "selector": ".trending__anime .item",
-        "itemTitle": "h5",
-        "itemUrl": "a->attr:href",
+        "itemUrl": "self->attr:href",
         "itemImage": "img->attr:src"
       }
     ],
     "search": {
       "path": "/buscar/{query}/",
-      "selector": ".anime__item, .card",
+      "selector": ".anime__item",
       "itemTitle": "h5",
       "itemUrl": "a->attr:href",
       "itemImage": "img->attr:src"

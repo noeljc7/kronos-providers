@@ -1,48 +1,48 @@
-     [
-       {
-         "id": "jkanime_dynamic",
-         "name": "Jkanime Dinámico",
-         "baseUrl": "https://jkanime.net",
-         "region": "ALL",
-         "type": "ANIME",
-         "home": [
-           {
-            "title": "ANIMES RECIENTES",
-            "path": "/",
-            "selector": "#animes .card",
-            "itemTitle": "h5.card-title",
-            "itemUrl": "a->attr:href",
-            "itemImage": "img->attr:data-animepic"
-          },
-          {
-            "title": "DONGHUAS",
-            "path": "/",
-            "selector": "#donghuas .card",
-            "itemTitle": "h5.card-title",
-            "itemUrl": "a->attr:href",
-            "itemImage": "img->attr:data-animepic"
-          },
-          {
-            "title": "OVAS Y ESPECIALES",
-            "path": "/",
-            "selector": "#ovas .card",
-            "itemTitle": "h5.card-title",
-            "itemUrl": "a->attr:href",
-            "itemImage": "img->attr:data-animepic"
-          }
-        ],
-        "search": {
-          "path": "/buscar/{query}/",
-          "selector": ".anime__item",
-          "itemTitle": "h5 a",
-          "itemUrl": "h5 a->attr:href",
-          "itemImage": ".set-bg->attr:data-setbg"
-        },
-        "details": {
-          "description": ".anime_info p.scroll",
-          "episodesSelector": "#episodes-content .epcontent",
-          "episodeTitle": ".cap_num span",
-          "episodeUrl": "a->attr:href"
-        }
+[
+  {
+    "id": "jkanime_dynamic",
+    "name": "Jkanime Dinámico",
+    "baseUrl": "https://jkanime.net",
+    "region": "LAT",
+    "type": "ANIME",
+    "home": [
+      {
+        "title": "ANIMES RECIENTES",
+        "path": "/",
+        "selector": "#animes .card",
+        "itemTitle": "h5.card-title",
+        "itemUrl": "a->attr:href",
+        "itemImage": "img->attr:data-animepic"
+      },
+      {
+        "title": "DONGHUAS",
+        "path": "/",
+        "selector": "#donghuas .card",
+        "itemTitle": "h5.card-title",
+        "itemUrl": "a->attr:href",
+        "itemImage": "img->attr:data-animepic"
+      },
+      {
+        "title": "OVAS Y ESPECIALES",
+        "path": "/",
+        "selector": "#ovas .card",
+        "itemTitle": "h5.card-title",
+        "itemUrl": "a->attr:href",
+        "itemImage": "img->attr:data-animepic"
       }
-    ]
+    ],
+    "search": {
+      "path": "/buscar/{query}/",
+      "selector": ".anime__item",
+      "itemTitle": "h5 a",
+      "itemUrl": "h5 a->attr:href",
+      "itemImage": ".set-bg->attr:data-setbg"
+    },
+    "details": {
+      "description": ".anime_info p.scroll",
+      "totalEpisodesSelector": ".anime__pagination option",
+      "episodeTitle": "Capítulo {n}",
+      "episodeUrl": "/{n}/"
+    }
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "id": "jkanime_dynamic",
+  "name": "Jkanime Dinámico",
+  "baseUrl": "https://jkanime.net",
+  "region": "LAT",
+  "type": "ANIME",
+  "home": [
+    {
+      "title": "EPISODIOS RECIENTES",
+      "path": "/",
+      "selector": "#animes .card",
+      "itemTitle": "h5.card-title",
+      "itemUrl": "a->attr:href",
+      "itemImage": "img->attr:data-animepic"
+    },
+    {
+      "title": "TOP ANIMES",
+      "path": "/top",
+      "selector": ".toplist",
+      "itemTitle": "h5.card-title",
+      "itemUrl": "a->attr:href",
+      "itemImage": "img.card-img-top->attr:src"
+    }
+  ],
+  "catalog": {
+    "path": "/directorio/",
+    "selector": ".page_directorio .dir1",
+    "scriptJson": "var animes\\s*=\\s*(\\{.*?\\});",
+    "itemTitle": "title",
+    "itemUrl": "url",
+    "itemImage": "image"
+  },
+  "filters": [
+    {
+      "title": "Género",
+      "queryParam": "genero",
+      "options": [
+        { "label": "Todos", "value": "" },
+        { "label": "Acción", "value": "accion" },
+        { "label": "Aventura", "value": "aventura" },
+        { "label": "Comedia", "value": "comedia" },
+        { "label": "Drama", "value": "drama" },
+        { "label": "Fantasía", "value": "fantasia" },
+        { "label": "Romance", "value": "romance" },
+        { "label": "Seinen", "value": "seinen" },
+        { "label": "Shounen", "value": "shounen" },
+        { "label": "Sobrenatural", "value": "sobrenatural" },
+        { "label": "Isekai", "value": "isekai" },
+        { "label": "Latino", "value": "latino" }
+      ]
+    },
+    {
+      "title": "Tipo",
+      "queryParam": "tipo",
+      "options": [
+        { "label": "Todos", "value": "" },
+        { "label": "Animes", "value": "animes" },
+        { "label": "Películas", "value": "peliculas" },
+        { "label": "OVAs", "value": "ovas" },
+        { "label": "ONAs", "value": "onas" },
+        { "label": "Especiales", "value": "especiales" }
+      ]
+    },
+    {
+      "title": "Estado",
+      "queryParam": "estado",
+      "options": [
+        { "label": "Todos", "value": "" },
+        { "label": "En emisión", "value": "emision" },
+        { "label": "Finalizados", "value": "finalizados" },
+        { "label": "Por estrenar", "value": "estrenos" }
+      ]
+    },
+    {
+      "title": "Año",
+      "queryParam": "fecha",
+      "options": [
+        { "label": "Todos", "value": "" },
+        { "label": "2026", "value": "2026" },
+        { "label": "2025", "value": "2025" },
+        { "label": "2024", "value": "2024" },
+        { "label": "2023", "value": "2023" },
+        { "label": "2022", "value": "2022" },
+        { "label": "2021", "value": "2021" },
+        { "label": "2020", "value": "2020" }
+      ]
+    },
+    {
+      "title": "Ordenar",
+      "queryParam": "filtro",
+      "options": [
+        { "label": "Fecha", "value": "" },
+        { "label": "Nombre", "value": "nombre" },
+        { "label": "Popularidad", "value": "popularidad" }
+      ]
+    }
+  ],
+  "search": {
+    "path": "/buscar/{query}/",
+    "selector": ".anime__item",
+    "itemTitle": "h5 a",
+    "itemUrl": "h5 a->attr:href",
+    "itemImage": ".set-bg->attr:data-setbg"
+  },
+  "details": {
+    "description": ".anime_info p.scroll",
+    "totalEpisodesSelector": "ajax:#guardar-anime->attr:data-anime",
+    "episodeTitle": "Capítulo {n}",
+    "episodeUrl": "/{n}/"
+  },
+  "videos": {
+    "scriptRegex": "var servers = (\\\\[.*?\\\\]);",
+    "serverName": "server",
+    "serverUrl": "remote->base64"
+  }
+}

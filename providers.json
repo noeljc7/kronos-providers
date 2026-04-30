@@ -1,7 +1,7 @@
 [
   {
     "id": "jkanime_dynamic",
-    "name": "Jkanime",
+    "name": "Jkanime Dinámico",
     "baseUrl": "https://jkanime.net",
     "region": "LAT",
     "type": "ANIME",
@@ -113,6 +113,56 @@
       "scriptRegex": "var servers = (\\[.*?\\]);",
       "serverName": "server",
       "serverUrl": "remote->base64"
+    }
+  },
+  {
+    "id": "flixlatam_dynamic",
+    "name": "FlixLatam Dinámico",
+    "baseUrl": "https://flixlatam.com",
+    "region": "LAT",
+    "type": "MOVIE",
+    "home": [
+      {
+        "title": "PELÍCULAS RECIENTES",
+        "path": "/",
+        "selector": ".home-movies article.item",
+        "itemTitle": ".data h3 a",
+        "itemUrl": ".data h3 a->attr:href",
+        "itemImage": ".poster img->attr:src"
+      },
+      {
+        "title": "SERIES RECIENTES",
+        "path": "/",
+        "selector": ".home-tvshows article.item",
+        "itemTitle": ".data h3 a",
+        "itemUrl": ".data h3 a->attr:href",
+        "itemImage": ".poster img->attr:src"
+      }
+    ],
+    "catalog": {
+      "path": "/pelicula/page/{page}/",
+      "selector": "article.item",
+      "itemTitle": ".data h3 a",
+      "itemUrl": ".data h3 a->attr:href",
+      "itemImage": ".poster img->attr:src"
+    },
+    "search": {
+      "path": "/search?s={query}",
+      "selector": ".items article.item",
+      "itemTitle": ".data h3 a",
+      "itemUrl": ".data h3 a->attr:href",
+      "itemImage": ".poster img->attr:src"
+    },
+    "details": {
+      "description": ".wp-content p",
+      "episodesSelector": "ul.episodios li",
+      "episodeTitle": ".episodiotitle a",
+      "episodeUrl": ".episodiotitle a->attr:href"
+    },
+    "videos": {
+      "scriptRegex": "let dataLink = (\\[.*?\\]);",
+      "serverName": "servername",
+      "serverUrl": "link"
     }
   }
 ]

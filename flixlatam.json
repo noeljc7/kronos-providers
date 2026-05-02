@@ -1,0 +1,140 @@
+{
+  "id": "flixlatam_modular",
+  "name": "FlixLatam",
+  "baseUrl": "https://flixlatam.com",
+  "region": "LAT",
+  "type": "MOVIE",
+  "home": [
+    {
+      "title": "ÚLTIMOS EPISODIOS",
+      "path": "/",
+      "selector": "div.items:has(h2:contains(Últimos Episodios)) article.item",
+      "itemTitle": ".data h3 a",
+      "itemUrl": ".data h3 a->attr:href",
+      "itemImage": ".poster img->attr:src",
+      "itemType": "self->attr:class"
+    },
+    {
+      "title": "PELÍCULAS",
+      "path": "/",
+      "selector": "div.items:has(h2:contains(Películas)) article.item",
+      "itemTitle": ".data h3 a",
+      "itemUrl": ".data h3 a->attr:href",
+      "itemImage": ".poster img->attr:src",
+      "itemType": "self->attr:class"
+    },
+    {
+      "title": "SERIES",
+      "path": "/",
+      "selector": "div.items:has(h2:contains(Series)) article.item",
+      "itemTitle": ".data h3 a",
+      "itemUrl": ".data h3 a->attr:href",
+      "itemImage": ".poster img->attr:src",
+      "itemType": "self->attr:class"
+    },
+    {
+      "title": "ANIME",
+      "path": "/",
+      "selector": "div.items:has(h2:contains(Anime)) article.item",
+      "itemTitle": ".data h3 a",
+      "itemUrl": ".data h3 a->attr:href",
+      "itemImage": ".poster img->attr:src",
+      "itemType": "self->attr:class"
+    },
+    {
+      "title": "DORAMAS",
+      "path": "/",
+      "selector": "div.items:has(h2:contains(Doramas)) article.item",
+      "itemTitle": ".data h3 a",
+      "itemUrl": ".data h3 a->attr:href",
+      "itemImage": ".poster img->attr:src",
+      "itemType": "self->attr:class"
+    }
+  ],
+  "catalog": {
+    "path": "/pelicula/page/{page}/",
+    "selector": "article.item",
+    "itemTitle": ".data h3 a",
+    "itemUrl": ".data h3 a->attr:href",
+    "itemImage": ".poster img->attr:src",
+    "itemType": "self->attr:class"
+  },
+  "filters": [
+    {
+      "title": "Categoría",
+      "queryParam": "type",
+      "options": [
+        { "label": "Películas", "value": "peliculas" },
+        { "label": "Pelis Populares", "value": "peliculas/populares" },
+        { "label": "Series", "value": "series" },
+        { "label": "Series Populares", "value": "series/populares" },
+        { "label": "Anime", "value": "animes" },
+        { "label": "Anime Popular", "value": "animes/populares" },
+        { "label": "Doramas", "value": "generos/dorama" }
+      ]
+    },
+    {
+      "title": "Género",
+      "queryParam": "generos",
+      "options": [
+        { "label": "Acción", "value": "accion" },
+        { "label": "Animación", "value": "animacion" },
+        { "label": "Aventura", "value": "aventura" },
+        { "label": "Bélica", "value": "belica" },
+        { "label": "Ciencia Ficción", "value": "ciencia-ficcion" },
+        { "label": "Comedia", "value": "comedia" },
+        { "label": "Crimen", "value": "crimen" },
+        { "label": "Documental", "value": "documental" },
+        { "label": "Drama", "value": "drama" },
+        { "label": "Fantasía", "value": "fantasia" },
+        { "label": "Familia", "value": "familia" },
+        { "label": "Guerra", "value": "guerra" },
+        { "label": "Historia", "value": "historia" },
+        { "label": "Romance", "value": "romance" },
+        { "label": "Suspense", "value": "suspense" },
+        { "label": "Terror", "value": "terror" },
+        { "label": "Western", "value": "western" },
+        { "label": "Misterio", "value": "misterio" }
+      ]
+    },
+    {
+      "title": "Año",
+      "queryParam": "year",
+      "options": [
+        { "label": "2026", "value": "2026" },
+        { "label": "2025", "value": "2025" },
+        { "label": "2024", "value": "2024" },
+        { "label": "2023", "value": "2023" },
+        { "label": "2022", "value": "2022" },
+        { "label": "2021", "value": "2021" },
+        { "label": "2020", "value": "2020" },
+        { "label": "2015", "value": "2015" },
+        { "label": "2010", "value": "2010" },
+        { "label": "2000", "value": "2000" }
+      ]
+    }
+  ],
+  "search": {
+    "path": "/search?s={query}",
+    "selector": ".items article.item",
+    "itemTitle": ".data h3 a",
+    "itemUrl": ".data h3 a->attr:href",
+    "itemImage": ".poster img->attr:src",
+    "itemType": "self->attr:class"
+  },
+  "details": {
+    "title": ".data h1",
+    "description": ".wp-content p",
+    "image": ".poster img->attr:src",
+    "backdrop": ".poster img->attr:src",
+    "genres": ".sgeneros a",
+    "episodesSelector": "#seasons ul.episodios li",
+    "episodeTitle": ".episodiotitle a",
+    "episodeUrl": ".episodiotitle a->attr:href"
+  },
+  "videos": {
+    "scriptRegex": "let dataLink\\s*=\\s*(\\[.*?\\]);",
+    "serverName": "servername",
+    "serverUrl": "link"
+  }
+}
